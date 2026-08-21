@@ -1,4 +1,5 @@
 import * as Device from 'expo-device';
+import { FontAwesome, AntDesign } from '@expo/vector-icons';
 import { Platform, StyleSheet, Text, TextInput, View, Image, ImageBackground, ViewStyle, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -41,8 +42,10 @@ export default function LoginPage() {
       </LinearGradient>
 
       </SafeAreaView>
+      
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
