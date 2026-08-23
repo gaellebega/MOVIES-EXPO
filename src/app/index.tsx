@@ -9,10 +9,6 @@ import { Link } from 'expo-router/build/react-navigation';
 export default function HomeScreen() {
 
  const [button, setButton] = useState(false);
-
-
- 
-
   return (
     <SafeAreaView style={styles.safeArea}>
       <ImageBackground source={require('./bg.png')} resizeMode='cover' style={styles.images} >
