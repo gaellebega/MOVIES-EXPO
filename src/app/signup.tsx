@@ -10,8 +10,10 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome, AntDesign } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 
 export default function SignUpPage() {
+  const router = useRouter();
   const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   return (
@@ -25,6 +27,7 @@ export default function SignUpPage() {
           showsVerticalScrollIndicator={false}
         >
           <View style={styles.mainContent}>
+
             {/* Logo */}
             <View style={styles.title}>
               <Text style={styles.movie}>Movie</Text>
@@ -32,12 +35,14 @@ export default function SignUpPage() {
             </View>
 
             <Text style={styles.heading}>Create Account</Text>
+
             <Text style={styles.subHeading}>
               Join MovieZone and start watching.
             </Text>
 
             {/* Form */}
             <View style={styles.formContainer}>
+
               <TextInput
                 style={styles.input}
                 placeholder="Name"
@@ -71,29 +76,40 @@ export default function SignUpPage() {
                 placeholderTextColor="gray"
                 secureTextEntry
               />
+
             </View>
 
             {/* Terms */}
             <View style={styles.termsContainer}>
+
               <TouchableOpacity
                 style={styles.checkbox}
                 onPress={() => setAcceptedTerms(!acceptedTerms)}
               >
                 {acceptedTerms && (
-                  <AntDesign name="check" size={14} color="white" />
+                  <AntDesign
+                    name="check"
+                    size={14}
+                    color="white"
+                  />
                 )}
               </TouchableOpacity>
 
               <View style={styles.termsTextContainer}>
+
                 <Text style={styles.termsText}>
-                  Yes I understand and agree to the Moviezone Terms of Service,including the
+                  Yes I understand and agree to the Moviezone Terms of
+                  Service, including the
                 </Text>
 
                 <View style={styles.linksRow}>
                   <TouchableOpacity>
-                    <Text style={styles.redLink}> User Agreement and Privacy Policy</Text>
+                    <Text style={styles.redLink}>
+                      User Agreement and Privacy Policy
+                    </Text>
                   </TouchableOpacity>
                 </View>
+
               </View>
             </View>
 
@@ -104,32 +120,55 @@ export default function SignUpPage() {
 
             {/* Login */}
             <View style={styles.loginContainer}>
+
               <Text style={styles.loginText}>
                 Already have an account?
               </Text>
 
-              <TouchableOpacity>
-                <Text style={styles.loginLink}> Login</Text>
+              <TouchableOpacity
+                onPress={() => router.push('/login')}
+              >
+                <Text style={styles.loginLink}>
+                  Login
+                </Text>
               </TouchableOpacity>
+
             </View>
 
             {/* Divider */}
             <View style={styles.dividerContainer}>
+
               <View style={styles.divider} />
-              <Text style={styles.dividerText}>or sign up with</Text>
+
+              <Text style={styles.dividerText}>
+                or sign up with
+              </Text>
+
               <View style={styles.divider} />
+
             </View>
 
             {/* Social Buttons */}
             <View style={styles.socialContainer}>
+
               <TouchableOpacity style={styles.socialButton}>
-                <FontAwesome name="facebook-f" size={24} color="black" />
+                <FontAwesome
+                  name="facebook-f"
+                  size={24}
+                  color="black"
+                />
               </TouchableOpacity>
 
               <TouchableOpacity style={styles.socialButton}>
-                <AntDesign name="google" size={24} color="black" />
+                <AntDesign
+                  name="google"
+                  size={24}
+                  color="black"
+                />
               </TouchableOpacity>
+
             </View>
+
           </View>
         </ScrollView>
       </LinearGradient>
@@ -276,6 +315,7 @@ const styles = StyleSheet.create({
     color: 'red',
     fontSize: 15,
     fontWeight: 'bold',
+    marginLeft: 4,
   },
 
   dividerContainer: {
