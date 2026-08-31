@@ -1,0 +1,51 @@
+src whould be eveyrhting that makes the application work
+src/
+├── components/
+├── pages/
+├── services/
+├── hooks/
+├── types/
+├── utils/
+├── App.tsx
+└── main.tsx
+
+compientnts reusable ui
+components/
+├── Navbar.tsx
+├── Footer.tsx
+├── Button.tsx
+├── Card.tsx
+└── Sidebar.tsx
+
+pages are the complete screens like home,about,
+assets are images icons and fonts
+
+
+SERVICE this becomes so important when you work with backend
+services/
+├── authService.ts
+├── rideService.ts
+├── paymentService.ts
+└── userService.ts
+
+services = talking to the backend
+types because we are using the typescript so this is also important we identify the types of our data
+utils =are helper functions
+layouts are useful for the larger projects for exmplae when we need to use the navbar
+instead of building thate veryday 
+<DashboardLayout>
+   <Dashboard />
+</DashboardLayout>
+
+in the App This is normally the main React application component
+main is responsible for start the app
+
+main.tsx
+    ↓
+starts React
+    ↓
+App.tsx
+    ↓
+your application
+
+index.css is responsible for the groabl css
